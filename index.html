@@ -313,6 +313,7 @@
     border-top: 1px solid #e0e0e0;
 }
 
+/* Fix for responsive amp-img in hero */
 .hero-image-container {
     position: absolute;
     top: 0;
@@ -320,6 +321,23 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    overflow: hidden; /* Add this */
+}
+
+/* For responsive layout */
+.hero-image-container amp-img.hero-background-image {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.hero-image-container amp-img img {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* AMP img with layout="fill" needs this */
@@ -540,6 +558,15 @@
     .hero {
         min-height: 600px; /* Give it a minimum height */
         position: relative;
+    }
+    
+    /* Add this for responsive image on mobile */
+    .hero-image-container amp-img[layout="responsive"] {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
     }
     
     /* FORCE the image container to be visible and sized properly */
@@ -2391,12 +2418,14 @@
         <div class="hero-image-container">
             <amp-img 
                 src="/images/bathrooms/luxury-bathroom-hero.jpg"
-                layout="fill"
+                width="1920"
+                height="1080"
+                layout="responsive"
                 alt="Luxury bathroom remodel showcase"
                 class="hero-background-image">
             </amp-img>
-            <div class="hero-overlay"></div>
-        </div>
+        <div class="hero-overlay"></div>
+</div>
         <div class="hero-container">
             <div class="hero-content">
                 <h1>Bathroom Remodeling Near Me - One Day Installation | Save $2,025</h1>
