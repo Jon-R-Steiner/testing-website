@@ -13,6 +13,8 @@
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     
     <!-- AMP Boilerplate -->
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
@@ -945,32 +947,42 @@
     </script>
 </head>
 <body>
-    <!-- Promotional Banner - Simple Static Version -->
-    <div class="promo-banner">
-        <span class="desktop-text">
-            📚 <span class="highlight">Back to School Special</span> - 
-            Get Organized with Free Storage Solutions + Kids Safety Package - 
-            <span class="highlight">August Only</span> 🎒
-        </span>
-        <span class="mobile-text">
-            📚 <strong>School Special:</strong> Free Storage! 📚
-        </span>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Baths R Us</div>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#locations">Locations</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="cta-button desktop-cta">Free Consultation</a>
-            <a href="tel:5551234567" class="cta-button mobile-cta">📞 Call Now</a>
+    <!-- Promotional Banner - Dynamic Version -->
+   <amp-list 
+    width="auto"
+    height="60"
+    layout="fixed-height"
+    src="/api/promotions"
+    single-item
+    items="."
+    class="promo-banner-wrapper">
+    <template type="amp-mustache">
+        <div class="promo-banner">
+            <span class="desktop-text">
+                {{desktopPrefix}} 
+                <span class="highlight">{{holidayName}}</span> - 
+                {{mainOffer}} 
+                {{#bonusOffer}}+ {{bonusOffer}}{{/bonusOffer}} - 
+                <span class="highlight">{{urgency}}</span> 
+                {{desktopSuffix}}
+            </span>
+            <span class="mobile-text">
+                {{mobileIcon}} 
+                <strong>{{mobileTitle}}</strong> 
+                {{mobileOffer}} 
+                {{mobileIcon}}
+            </span>
         </div>
-    </nav>
+    </template>
+    <div placeholder class="promo-banner">
+        <span class="desktop-text">✨ <span class="highlight">Special Offer</span> - Loading current promotion... ✨</span>
+        <span class="mobile-text">💰 <strong>Loading...</strong> 💰</span>
+    </div>
+    <div fallback class="promo-banner">
+        <span class="desktop-text">📚 <span class="highlight">Back to School Special</span> - Free Storage Solutions - <span class="highlight">August Only</span> 🎒</span>
+        <span class="mobile-text">📚 <strong>School Special:</strong> Free Storage! 📚</span>
+    </div>
+</amp-list>
 
     <!-- Hero Section -->
     <section class="hero">
