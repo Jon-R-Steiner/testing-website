@@ -1,4 +1,4 @@
-<!doctype html ⚡>
+<!doctype html>
 <html ⚡ lang="en">
 <head>
     <meta charset="utf-8">
@@ -11,10 +11,7 @@
     
     <!-- AMP Components -->
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
-    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
-    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     
     <!-- AMP Boilerplate -->
@@ -24,11 +21,11 @@
     <!-- Custom Styles - Optimized for 50+ Readability -->
     <style amp-custom>
         :root {
-            --primary: rgb(0, 102, 204);  /* Darker blue for better contrast */
+            --primary: rgb(0, 102, 204);
             --primary-dark: rgb(0, 51, 102);
-            --secondary: rgb(204, 102, 0);  /* Darker orange */
+            --secondary: rgb(204, 102, 0);
             --accent: rgb(255, 183, 77);
-            --dark: #1a1a1a;  /* Darker text for better contrast */
+            --dark: #1a1a1a;
             --light: #ffffff;
             --gray-light: #f5f5f5;
             --gray-medium: #666666;
@@ -43,25 +40,16 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;  /* Serif fonts are easier to read */
-            font-size: 18px;  /* Larger base font size */
-            line-height: 1.8;  /* More generous line height */
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 18px;
+            line-height: 1.8;
             color: var(--dark);
             background: white;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Simplified background - no animations */
-        body::before {
-            display: none;
-        }
-
-        /* Promotional Banner - Higher Contrast */
-        .promo-banner-wrapper {
-            display: block;
-        }
-
+        /* Promotional Banner */
         .promo-banner {
             background: var(--primary-dark);
             color: white;
@@ -93,7 +81,7 @@
             font-weight: 700;
         }
 
-        /* Navigation - Clearer and Larger */
+        /* Navigation */
         .navbar {
             background: white;
             padding: 1.5rem 0;
@@ -166,10 +154,9 @@
         .cta-button:focus {
             background: white;
             color: var(--primary);
-            transform: none;  /* Remove movement for stability */
         }
 
-        /* Hero Section - Simplified and Clearer */
+        /* Hero Section */
         .hero {
             padding: 4rem 0;
             background: linear-gradient(to bottom, #f0f4f8, white);
@@ -224,7 +211,6 @@
         .feature-item:focus {
             background: var(--primary);
             color: white;
-            transform: none;  /* No movement */
         }
 
         .feature-item:hover h3,
@@ -252,7 +238,7 @@
             line-height: 1.6;
         }
 
-        /* Form - Larger and Clearer */
+        /* Form */
         .hero-form {
             background: white;
             padding: 3rem;
@@ -272,14 +258,6 @@
 
         .form-group {
             margin-bottom: 1.75rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-            color: var(--dark);
-            font-size: 18px;
         }
 
         .hero-form input,
@@ -343,7 +321,6 @@
         .contact-form button:focus {
             background: white;
             color: var(--primary);
-            transform: none;
         }
 
         .phone-info {
@@ -367,7 +344,7 @@
             font-weight: 600;
         }
 
-        /* Services Section - Clear Cards */
+        /* Services Section */
         .services {
             padding: 5rem 0;
             background: var(--gray-light);
@@ -430,7 +407,6 @@
         .service-card:focus {
             background: var(--primary);
             color: white;
-            transform: none;
         }
 
         .service-card:hover h3,
@@ -473,7 +449,7 @@
             box-shadow: var(--shadow-soft);
         }
 
-        /* Service Showcase - Simplified */
+        /* Service Showcase */
         .service-showcase {
             padding: 5rem 0;
             background: white;
@@ -548,7 +524,6 @@
         .showcase-feature:hover {
             background: var(--primary);
             color: white;
-            transform: none;
         }
 
         .showcase-feature:hover span {
@@ -604,7 +579,7 @@
             color: var(--primary);
         }
 
-        /* Social Proof - High Contrast */
+        /* Social Proof */
         .social-proof {
             background: var(--primary-dark);
             padding: 5rem 0;
@@ -628,7 +603,6 @@
 
         .proof-item:hover {
             background: var(--accent);
-            transform: none;
         }
 
         .proof-number {
@@ -646,7 +620,7 @@
             letter-spacing: 1px;
         }
 
-        /* About Section - Clear Layout */
+        /* About Section */
         .about {
             background: white;
             padding: 5rem 0;
@@ -711,7 +685,54 @@
             font-weight: 800;
         }
 
-        /* Contact Section - Simplified */
+        /* Locations */
+        .locations {
+            background: var(--gray-light);
+            padding: 5rem 0;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .location-card {
+            background: white;
+            border: 3px solid var(--primary);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .location-city {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .location-state {
+            font-size: 16px;
+            color: var(--gray-medium);
+            margin-bottom: 1rem;
+        }
+
+        .location-details {
+            font-size: 16px;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
         .contact {
             background: var(--primary);
             color: white;
@@ -748,373 +769,7 @@
             display: inline-block;
         }
 
-        /* STEP 8: NEW LOCATIONS SECTION STYLES */
-        /* Locations - New Scalable Design */
-        .locations {
-            background: var(--gray-light);
-            padding: 0;
-        }
-
-        .locations-hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .locations-hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        .locations-hero p {
-            font-size: 20px;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        /* Location Search Box */
-        .location-search-container {
-            max-width: 600px;
-            margin: -3rem auto 3rem;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .location-search-box {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .location-search-box h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .location-search-form {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .location-search-input {
-            flex: 1;
-            min-width: 200px;
-            padding: 1rem;
-            border: 3px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 18px;
-            font-family: inherit;
-        }
-
-        .location-search-input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .location-search-btn {
-            background: var(--primary);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .location-search-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Service Areas Overview */
-        .service-areas-overview {
-            margin-bottom: 4rem;
-            padding: 0 2rem;
-        }
-
-        .coverage-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-
-        .coverage-stat {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 2px solid var(--primary);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .coverage-stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            display: block;
-        }
-
-        .coverage-stat-label {
-            font-size: 16px;
-            color: var(--gray-medium);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0.5rem;
-        }
-
-        /* Featured Locations */
-        .featured-locations {
-            margin-bottom: 4rem;
-            padding: 0 2rem;
-        }
-
-        .featured-locations h3 {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--dark);
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .featured-card {
-            background: white;
-            border: 3px solid var(--primary);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--secondary);
-            color: white;
-            padding: 6px 16px;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-radius: 4px;
-        }
-
-        .featured-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-            background: var(--primary);
-            color: white;
-        }
-
-        .featured-card:hover .featured-city,
-        .featured-card:hover .featured-details,
-        .featured-card:hover .featured-state {
-            color: white;
-        }
-
-        .featured-city {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .featured-state {
-            font-size: 16px;
-            color: var(--gray-medium);
-            margin-bottom: 1rem;
-        }
-
-        .featured-details {
-            font-size: 16px;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        /* State Directory Accordion */
-        .state-directory {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem 5rem;
-        }
-
-        .state-directory h3 {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .state-directory-subtitle {
-            text-align: center;
-            font-size: 18px;
-            color: var(--gray-medium);
-            margin-bottom: 3rem;
-        }
-
-        .region-section {
-            margin-bottom: 2rem;
-        }
-
-        .region-header {
-            background: var(--primary-dark);
-            color: white;
-            padding: 1rem 1.5rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            border-radius: 8px 8px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .region-count {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-
-        amp-accordion {
-            border: 3px solid var(--primary);
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-        }
-
-        amp-accordion section {
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        amp-accordion section:last-child {
-            border-bottom: none;
-        }
-
-        amp-accordion section h4 {
-            margin: 0;
-            padding: 1.25rem 1.5rem;
-            background: white;
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--dark);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            padding-right: 3rem;
-        }
-
-        amp-accordion section[expanded] h4 {
-            background: var(--gray-light);
-            color: var(--primary);
-        }
-
-        amp-accordion section h4:hover {
-            background: var(--gray-light);
-        }
-
-        amp-accordion section h4::after {
-            content: '+';
-            position: absolute;
-            right: 1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        amp-accordion section[expanded] h4::after {
-            content: '−';
-        }
-
-        .state-cities {
-            padding: 1.5rem;
-            background: #fafafa;
-        }
-
-        .cities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .city-link {
-            color: var(--primary);
-            text-decoration: none;
-            padding: 0.75rem;
-            background: white;
-            border-radius: 6px;
-            display: block;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            text-align: center;
-        }
-
-        .city-link:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        /* Call to Action Box */
-        .location-cta {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
-            padding: 3rem;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 4rem;
-            color: white;
-            box-shadow: var(--shadow-medium);
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .location-cta h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .location-cta p {
-            font-size: 18px;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-phone {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        /* Footer - High Contrast */
+        /* Footer */
         .footer {
             background: var(--dark);
             color: white;
@@ -1158,43 +813,8 @@
             font-size: 16px;
         }
 
-        /* Form Messages */
-        .form-message {
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        .form-success {
-            background: #d4edda;
-            color: #155724;
-            border: 3px solid #28a745;
-        }
-
-        .form-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 3px solid #dc3545;
-        }
-
-        /* Remove all animations for stability */
-        @keyframes none {
-            from, to { transform: none; }
-        }
-
-        * {
-            animation: none !important;
-        }
-
-        /* Responsive Design - Maintain Readability */
+        /* Responsive Design */
         @media (max-width: 1024px) {
-            body {
-                font-size: 17px;
-            }
-
             .hero-content h1 {
                 font-size: 2.4rem;
             }
@@ -1227,27 +847,16 @@
                 display: inline;
             }
 
-            .highlight {
-                display: inline;
-                padding: 2px 6px;
-                margin: 0 2px;
-            }
-
             .navbar {
                 padding: 1rem 0;
             }
 
             .nav-container {
                 padding: 0 1rem;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: nowrap;
-                gap: 0;
             }
 
             .logo {
                 font-size: 1.8rem;
-                flex-shrink: 0;
             }
 
             .nav-links {
@@ -1267,10 +876,6 @@
                 font-size: 16px;
             }
 
-            .hero {
-                padding: 2rem 0;
-            }
-
             .hero-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -1279,280 +884,31 @@
 
             .hero-content h1 {
                 font-size: 1.75rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 16px;
-                margin-bottom: 2rem;
             }
 
             .hero-features {
                 grid-template-columns: 1fr;
                 gap: 1rem;
-                margin: 2rem 0;
-            }
-
-            .feature-item {
-                padding: 1.5rem 1rem;
-            }
-
-            .feature-icon {
-                font-size: 2rem;
-            }
-
-            .feature-item h3 {
-                font-size: 18px;
-            }
-
-            .feature-item p {
-                font-size: 15px;
-            }
-
-            .hero-form {
-                padding: 2rem 1.5rem;
-                margin: 0;
-            }
-
-            .hero-form h3 {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-            }
-
-            .form-group {
-                margin-bottom: 1.25rem;
-            }
-
-            .hero-form input,
-            .hero-form select,
-            .contact-form input,
-            .contact-form select {
-                padding: 1rem;
-                font-size: 16px;
-            }
-
-            .hero-form button,
-            .contact-form button {
-                padding: 1.25rem;
-                font-size: 18px;
-            }
-
-            .phone-info {
-                margin-top: 1.5rem;
-                padding-top: 1.5rem;
-            }
-
-            .phone-number {
-                font-size: 1.5rem;
-            }
-
-            .hours {
-                font-size: 16px;
-            }
-
-            .services,
-            .service-showcase,
-            .social-proof,
-            .about,
-            .locations,
-            .contact {
-                padding: 3rem 0;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-
-            .section-title {
-                font-size: 1.75rem;
-                margin-bottom: 1rem;
-            }
-
-            .section-subtitle {
-                font-size: 16px;
-                margin-bottom: 2.5rem;
             }
 
             .services-grid {
-                gap: 1.5rem;
-            }
-
-            .service-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .service-icon {
-                font-size: 3rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .service-card h3 {
-                font-size: 20px;
-            }
-
-            .service-card p {
-                font-size: 16px;
-            }
-
-            .showcase-container {
-                padding: 0 1rem;
-                gap: 2rem;
-            }
-
-            .showcase-content h3 {
-                font-size: 1.75rem;
-            }
-
-            .showcase-badge {
-                font-size: 14px;
-                padding: 0.5rem 1.5rem;
-            }
-
-            .showcase-content p {
-                font-size: 16px;
-            }
-
-            .showcase-features {
-                gap: 0.75rem;
-            }
-
-            .showcase-feature {
-                padding: 1rem;
-            }
-
-            .showcase-feature-icon {
-                font-size: 1.5rem;
-            }
-
-            .showcase-feature span {
-                font-size: 16px;
-            }
-
-            .showcase-link {
-                padding: 1rem 2rem;
-                font-size: 16px;
-            }
-
-            .showcase-image {
-                height: 250px;
-            }
-
-            .showcase-image-content {
-                font-size: 4rem;
+                grid-template-columns: 1fr;
             }
 
             .proof-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-
-            .proof-item {
-                padding: 2rem 1rem;
-            }
-
-            .proof-number {
-                font-size: 2.5rem;
-            }
-
-            .proof-label {
-                font-size: 14px;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
 
-            .about-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .about h2 {
-                font-size: 1.75rem;
-            }
-
-            .about h3 {
-                font-size: 1.5rem;
-            }
-
-            .about p,
-            .about-features li {
-                font-size: 16px;
-            }
-
-            .locations-hero h2 {
-                font-size: 2rem;
-            }
-
-            .location-search-form {
-                flex-direction: column;
-            }
-
-            .location-search-input,
-            .location-search-btn {
-                width: 100%;
-            }
-
-            .coverage-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .featured-grid {
+            .locations-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .cities-grid {
-                grid-template-columns: 1fr;
-            }
-
-            amp-accordion section h4 {
-                font-size: 16px;
-                padding: 1rem;
-            }
-
-            .region-header {
-                font-size: 1.1rem;
-            }
-
-            .cta-phone {
-                font-size: 1.8rem;
-            }
-
-            .contact h2 {
-                font-size: 1.75rem;
-            }
-
-            .contact p {
-                font-size: 16px;
-            }
-
-            .contact-form {
-                max-width: 100%;
-                padding: 0 1rem;
-            }
-
-            .phone-number-large {
-                font-size: 1.75rem;
-                padding: 1rem;
-                margin: 1.5rem 0;
             }
 
             .footer-content {
-                gap: 2rem;
-            }
-
-            .footer h4 {
-                font-size: 1.25rem;
-            }
-
-            .footer p,
-            .footer li {
-                font-size: 16px;
-            }
-
-            .footer-bottom {
-                font-size: 14px;
-                padding: 0 1rem;
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1562,102 +918,16 @@
                 font-size: 13px;
             }
 
-            .navbar {
-                padding: 0.75rem 0;
-            }
-
-            .nav-container {
-                padding: 0 0.75rem;
-            }
-
-            .logo {
-                font-size: 1.5rem;
-            }
-
-            .cta-button {
-                padding: 0.6rem 1rem;
-                font-size: 14px;
-            }
-
-            .hero {
-                padding: 1.5rem 0;
-            }
-
             .hero-content h1 {
                 font-size: 1.5rem;
-                line-height: 1.4;
             }
 
-            .hero-subtitle {
-                font-size: 15px;
-                line-height: 1.7;
+            .section-title {
+                font-size: 1.75rem;
             }
 
             .proof-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .phone-number-large {
-                font-size: 1.5rem;
-                padding: 0.75rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .hero-form {
-                padding: 1.5rem 1rem;
-            }
-
-            .hero-form h3 {
-                font-size: 1.25rem;
-            }
-
-            .locations-hero {
-                padding: 3rem 0;
-            }
-
-            .location-search-box {
-                padding: 1.5rem;
-            }
-
-            .coverage-stat-number {
-                font-size: 2rem;
-            }
-
-            .featured-city {
-                font-size: 1.25rem;
-            }
-        }
-
-        /* Focus states for keyboard navigation */
-        a:focus,
-        button:focus,
-        input:focus,
-        select:focus {
-            outline: 3px solid var(--secondary);
-            outline-offset: 2px;
-        }
-
-        /* Print styles for better readability */
-        @media print {
-            body {
-                font-size: 12pt;
-                line-height: 1.5;
-                color: black;
-                background: white;
-            }
-
-            .navbar,
-            .promo-banner,
-            .hero-form,
-            .contact-form {
-                display: none;
             }
         }
     </style>
@@ -1668,98 +938,24 @@
       "@context": "https://schema.org",
       "@type": "HomeAndConstructionBusiness",
       "name": "Baths R Us",
-      "description": "Premium bathroom transformations with professional remodeling services. Expert installations, luxury designs, and lifetime warranties.",
-      "serviceType": ["Bathroom Remodeling", "Shower Installation", "Walk-in Shower", "Tub to Shower Conversion", "Luxury Bathroom Design"],
-      "areaServed": "United States",
+      "description": "Premium bathroom transformations with professional remodeling services.",
       "telephone": "(555) 123-4567",
-      "url": "https://bathsrus-staging.netlify.app",
-      "priceRange": "$$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "27000"
-      }
+      "url": "https://bathsrus-staging.netlify.app"
     }
     </script>
 </head>
 <body>
-    <!-- Promotional Banner with Client-Side Date Logic -->
-    <div class="promo-banner" id="promo-banner">
-        <span class="desktop-text" id="desktop-promo">✨ <span class="highlight">Special Offer</span> - Loading... ✨</span>
-        <span class="mobile-text" id="mobile-promo">💰 <strong>Loading...</strong> 💰</span>
+    <!-- Promotional Banner - Simple Static Version -->
+    <div class="promo-banner">
+        <span class="desktop-text">
+            📚 <span class="highlight">Back to School Special</span> - 
+            Get Organized with Free Storage Solutions + Kids Safety Package - 
+            <span class="highlight">August Only</span> 🎒
+        </span>
+        <span class="mobile-text">
+            📚 <strong>School Special:</strong> Free Storage! 📚
+        </span>
     </div>
-    
-    <!-- Promotion Script (AMP-compatible approach using amp-script) -->
-    <script type="text/javascript">
-        // This runs on page load
-        (function() {
-            const promotions = [
-                // January
-                { start: '01-01', end: '01-15', desktop: '🎊 <span class="highlight">New Year New Bath</span> - 2025 Special - $2,025 Off + Free Smart Fixtures - <span class="highlight">January Only</span> ✨', mobile: '🎊 <strong>New Year:</strong> $2,025 Off! 🎊' },
-                { start: '01-16', end: '01-31', desktop: '⭐ <span class="highlight">MLK Weekend Sale</span> - Dream Bathroom Sale - 20% Off - <span class="highlight">This Month</span> ⭐', mobile: '⭐ <strong>Sale:</strong> 20% Off! ⭐' },
-                // February
-                { start: '02-01', end: '02-14', desktop: '💕 <span class="highlight">Valentine\'s Special</span> - Couples Save 14% Extra + His & Hers Upgrade - <span class="highlight">Book by Feb 14</span> 💕', mobile: '❤️ <strong>Valentine\'s:</strong> Save 14%! ❤️' },
-                { start: '02-15', end: '02-28', desktop: '🇺🇸 <span class="highlight">Presidents Day</span> - Presidential Savings $1,776 Off - <span class="highlight">This Week</span> 🇺🇸', mobile: '🇺🇸 <strong>Presidents:</strong> $1,776 Off! 🇺🇸' },
-                // March
-                { start: '03-01', end: '03-31', desktop: '🌸 <span class="highlight">Spring Refresh</span> - 0% APR for 18 Months + Free Cleaning Kit - <span class="highlight">March Special</span> 🌷', mobile: '🌸 <strong>Spring:</strong> 0% APR! 🌸' },
-                // April
-                { start: '04-01', end: '04-15', desktop: '💰 <span class="highlight">Tax Refund Special</span> - Extra 10% Off + Free Upgrades - <span class="highlight">April 15 Deadline</span> 💰', mobile: '💰 <strong>Tax Special:</strong> 10% Off! 💰' },
-                { start: '04-16', end: '04-30', desktop: '🌍 <span class="highlight">Earth Day Sale</span> - Go Green, Save Green + Free Eco Fixtures - <span class="highlight">Limited Time</span> ♻️', mobile: '🌍 <strong>Eco Sale:</strong> Save Green! 🌍' },
-                // May
-                { start: '05-01', end: '05-12', desktop: '🌺 <span class="highlight">Mother\'s Day</span> - Mom Deserves Luxury + Spa Package - <span class="highlight">Mother\'s Day</span> 💐', mobile: '💐 <strong>Mom\'s Special:</strong> Spa Free! 💐' },
-                { start: '05-13', end: '05-31', desktop: '✨ <span class="highlight">Memorial Day</span> - No Payments & No Interest 12 Months - <span class="highlight">Memorial Weekend</span> ✨', mobile: '🇺🇸 <strong>Memorial:</strong> 0% Interest! 🇺🇸' },
-                // June
-                { start: '06-01', end: '06-20', desktop: '👔 <span class="highlight">Father\'s Day</span> - Dad\'s Dream Bathroom 20% Off - <span class="highlight">Father\'s Day</span> 🎁', mobile: '👔 <strong>Dad\'s Special:</strong> 20% Off! 👔' },
-                { start: '06-21', end: '06-30', desktop: '☀️ <span class="highlight">Summer Splash</span> - 25% Off All Showers + Free Rainfall Head - <span class="highlight">Summer Special</span> 🏖️', mobile: '☀️ <strong>Summer:</strong> 25% Off! ☀️' },
-                // July
-                { start: '07-01', end: '07-10', desktop: '🇺🇸 <span class="highlight">July 4th Sale</span> - Save $1,776 on Remodels - <span class="highlight">July 4th Week</span> 🎆', mobile: '🎆 <strong>July 4th:</strong> $1,776 Off! 🎆' },
-                { start: '07-11', end: '07-31', desktop: '🎄 <span class="highlight">Christmas in July</span> - Holiday Pricing 30% Off - <span class="highlight">July Only</span> ☀️', mobile: '🎄 <strong>Xmas July:</strong> 30% Off! 🎄' },
-                // August
-                { start: '08-01', end: '08-31', desktop: '📚 <span class="highlight">Back to School</span> - Free Storage Solutions + Safety Package - <span class="highlight">August Special</span> 🎒', mobile: '📚 <strong>School Special:</strong> Free Storage! 📚' },
-                // September
-                { start: '09-01', end: '09-07', desktop: '🔨 <span class="highlight">Labor Day</span> - 25% Off All Labor Costs - <span class="highlight">Labor Day Only</span> 🔨', mobile: '🔨 <strong>Labor Day:</strong> 25% Off! 🔨' },
-                { start: '09-08', end: '09-30', desktop: '🍂 <span class="highlight">Fall Savings</span> - Heated Floors 50% Off - <span class="highlight">September Only</span> 🍁', mobile: '🍂 <strong>Fall:</strong> Heated Floors! 🍂' },
-                // October
-                { start: '10-01', end: '10-31', desktop: '🎃 <span class="highlight">Scary Good Deals</span> - 31% Off Everything - <span class="highlight">October Only</span> 👻', mobile: '🎃 <strong>Halloween:</strong> 31% Off! 🎃' },
-                // November
-                { start: '11-01', end: '11-11', desktop: '🎖️ <span class="highlight">Veterans Day</span> - Military Families Extra 15% - <span class="highlight">Veterans Week</span> 🇺🇸', mobile: '🎖️ <strong>Veterans:</strong> 15% Off! 🎖️' },
-                { start: '11-12', end: '11-30', desktop: '🛍️ <span class="highlight">Black Friday</span> - Biggest Sale 40% Off - <span class="highlight">While Supplies Last</span> 🛍️', mobile: '🛍️ <strong>Black Friday:</strong> 40% Off! 🛍️' },
-                // December
-                { start: '12-01', end: '12-24', desktop: '🎄 <span class="highlight">Holiday Special</span> - $500 Gift Card with Purchase - <span class="highlight">Holiday Season</span> 🎁', mobile: '🎁 <strong>Holiday:</strong> $500 Card! 🎁' },
-                { start: '12-25', end: '12-31', desktop: '🎊 <span class="highlight">Year End</span> - Final Clearance Sale - <span class="highlight">Ends Dec 31</span> 🎊', mobile: '🎊 <strong>Year End:</strong> Final Sale! 🎊' }
-            ];
-            
-            // Default promotion
-            const defaultPromo = {
-                desktop: '⭐ <span class="highlight">Special Offer</span> - Free Design Consultation + 0% Financing - <span class="highlight">Call Today</span> ⭐',
-                mobile: '📞 <strong>Special:</strong> Free Consultation! 📞'
-            };
-            
-            // Get current date
-            const now = new Date();
-            const month = (now.getMonth() + 1).toString().padStart(2, '0');
-            const day = now.getDate().toString().padStart(2, '0');
-            const currentDate = month + '-' + day;
-            
-            // Find active promotion
-            let activePromo = defaultPromo;
-            for (const promo of promotions) {
-                const startDate = promo.start;
-                const endDate = promo.end;
-                if (currentDate >= startDate && currentDate <= endDate) {
-                    activePromo = promo;
-                    break;
-                }
-            }
-            
-            // Update the banner
-            const desktopEl = document.getElementById('desktop-promo');
-            const mobileEl = document.getElementById('mobile-promo');
-            
-            if (desktopEl) desktopEl.innerHTML = activePromo.desktop;
-            if (mobileEl) mobileEl.innerHTML = activePromo.mobile;
-        })();
-    </script>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -1767,13 +963,11 @@
             <div class="logo">Baths R Us</div>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#design">Design</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#results">Gallery</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#locations">Locations</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="cta-button desktop-cta">Start Your Transformation</a>
+            <a href="#contact" class="cta-button desktop-cta">Free Consultation</a>
             <a href="tel:5551234567" class="cta-button mobile-cta">📞 Call Now</a>
         </div>
     </nav>
@@ -1806,7 +1000,7 @@
             
             <div class="hero-form">
                 <h3>Get Your Free Design Consultation</h3>
-                <form method="post" action-xhr="#" target="_top">
+                <form method="post" action="#" target="_top">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Full Name" required>
                     </div>
@@ -1988,92 +1182,41 @@
 
     <!-- Locations Section -->
     <section class="locations" id="locations">
-        <div class="locations-hero">
-            <div class="container">
-                <h2>Serving Premium Markets Nationwide</h2>
-                <p>Professional bathroom remodeling across America's finest neighborhoods</p>
-            </div>
-        </div>
-
-        <div class="location-search-container">
-            <div class="location-search-box">
-                <h3>Find Your Local Team</h3>
-                <form class="location-search-form" method="get" action="#">
-                    <input type="text" 
-                           class="location-search-input" 
-                           placeholder="Enter your city or ZIP code" 
-                           name="location"
-                           required>
-                    <button type="submit" class="location-search-btn">Search</button>
-                </form>
-            </div>
-        </div>
-
         <div class="container">
-            <div class="service-areas-overview">
-                <div class="coverage-stats">
-                    <div class="coverage-stat">
-                        <span class="coverage-stat-number">25+</span>
-                        <span class="coverage-stat-label">States</span>
-                    </div>
-                    <div class="coverage-stat">
-                        <span class="coverage-stat-number">150+</span>
-                        <span class="coverage-stat-label">Cities</span>
-                    </div>
-                    <div class="coverage-stat">
-                        <span class="coverage-stat-number">500+</span>
-                        <span class="coverage-stat-label">Teams</span>
-                    </div>
-                    <div class="coverage-stat">
-                        <span class="coverage-stat-number">24/7</span>
-                        <span class="coverage-stat-label">Support</span>
-                    </div>
+            <h2 class="section-title">Serving Premium Markets Nationwide</h2>
+            <p class="section-subtitle">Professional bathroom remodeling across America's finest neighborhoods</p>
+            
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-city">New York City</div>
+                    <div class="location-state">New York</div>
+                    <div class="location-details">Manhattan, Brooklyn, Queens, Bronx, Staten Island</div>
                 </div>
-            </div>
-
-            <div class="featured-locations">
-                <h3>Popular Service Areas</h3>
-                <div class="featured-grid">
-                    <div class="featured-card">
-                        <span class="featured-badge">High Demand</span>
-                        <div class="featured-city">New York City</div>
-                        <div class="featured-state">New York</div>
-                        <div class="featured-details">Manhattan, Brooklyn, Queens, Bronx, Staten Island</div>
-                    </div>
-                    <div class="featured-card">
-                        <div class="featured-city">Los Angeles</div>
-                        <div class="featured-state">California</div>
-                        <div class="featured-details">Beverly Hills, Santa Monica, Malibu, Pasadena</div>
-                    </div>
-                    <div class="featured-card">
-                        <div class="featured-city">Chicago</div>
-                        <div class="featured-state">Illinois</div>
-                        <div class="featured-details">Downtown, North Shore, Naperville, Oak Park</div>
-                    </div>
-                    <div class="featured-card">
-                        <span class="featured-badge">New</span>
-                        <div class="featured-city">Miami</div>
-                        <div class="featured-state">Florida</div>
-                        <div class="featured-details">South Beach, Coral Gables, Aventura, Key Biscayne</div>
-                    </div>
-                    <div class="featured-card">
-                        <div class="featured-city">Dallas</div>
-                        <div class="featured-state">Texas</div>
-                        <div class="featured-details">Highland Park, Plano, Frisco, Fort Worth</div>
-                    </div>
-                    <div class="featured-card">
-                        <div class="featured-city">Phoenix</div>
-                        <div class="featured-state">Arizona</div>
-                        <div class="featured-details">Scottsdale, Tempe, Chandler, Paradise Valley</div>
-                    </div>
+                <div class="location-card">
+                    <div class="location-city">Los Angeles</div>
+                    <div class="location-state">California</div>
+                    <div class="location-details">Beverly Hills, Santa Monica, Malibu, Pasadena</div>
                 </div>
-            </div>
-
-            <div class="location-cta">
-                <h3>Can't Find Your Location?</h3>
-                <p>We're constantly expanding to serve more communities. Call us to check availability in your area.</p>
-                <span class="cta-phone">📞 (555) 123-4567</span>
-                <p>Available 7 Days a Week | 8:00 AM - 8:00 PM EST</p>
+                <div class="location-card">
+                    <div class="location-city">Chicago</div>
+                    <div class="location-state">Illinois</div>
+                    <div class="location-details">Downtown, North Shore, Naperville, Oak Park</div>
+                </div>
+                <div class="location-card">
+                    <div class="location-city">Miami</div>
+                    <div class="location-state">Florida</div>
+                    <div class="location-details">South Beach, Coral Gables, Aventura, Key Biscayne</div>
+                </div>
+                <div class="location-card">
+                    <div class="location-city">Dallas</div>
+                    <div class="location-state">Texas</div>
+                    <div class="location-details">Highland Park, Plano, Frisco, Fort Worth</div>
+                </div>
+                <div class="location-card">
+                    <div class="location-city">Phoenix</div>
+                    <div class="location-state">Arizona</div>
+                    <div class="location-details">Scottsdale, Tempe, Chandler, Paradise Valley</div>
+                </div>
             </div>
         </div>
     </section>
@@ -2086,7 +1229,7 @@
             <div class="phone-number-large">📞 (555) 123-4567</div>
             <p style="font-size: 20px;">7 Days a Week | 8:00 AM - 8:00 PM EST</p>
             
-            <form class="contact-form" method="post" action-xhr="#" target="_top">
+            <form class="contact-form" method="post" action="#" target="_top">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Email Address" required>
                 <input type="tel" name="phone" placeholder="Phone Number" required>
@@ -2132,7 +1275,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Baths R Us. All rights reserved. | <a href="/privacy.html" style="color: white;">Privacy Policy</a> | <a href="/terms.html" style="color: white;">Terms of Service</a> | <a href="/financing.html" style="color: white;">Financing Options</a></p>
+                <p>&copy; 2025 Baths R Us. All rights reserved.</p>
             </div>
         </div>
     </footer>
