@@ -2575,6 +2575,76 @@
     </section>
 </main>
 
+
+
+
+
+    
+    <!-- Add this section RIGHT AFTER your </main> closing tag (after the hero section) -->
+
+<!-- IMAGE PATH TEST SECTION - Remove this after debugging -->
+<section style="background: #f0f0f0; padding: 2rem; text-align: center;">
+    <div class="container">
+        <h2 style="color: red; margin-bottom: 2rem;">🔍 IMAGE PATH TEST - REMOVE AFTER FIXING</h2>
+        
+        <!-- Test 1: Relative path without slash -->
+        <div style="margin-bottom: 2rem; border: 2px solid red; padding: 1rem;">
+            <h3>Test 1: Relative Path (images/bathrooms/luxury-bathroom-hero.jpg)</h3>
+            <amp-img 
+                src="images/bathrooms/luxury-bathroom-hero.jpg"
+                width="400"
+                height="225"
+                layout="responsive"
+                alt="Test 1 - Relative path">
+            </amp-img>
+            <p>If image shows above, relative path works!</p>
+        </div>
+        
+        <!-- Test 2: Absolute path with leading slash -->
+        <div style="margin-bottom: 2rem; border: 2px solid blue; padding: 1rem;">
+            <h3>Test 2: Absolute Path (/images/bathrooms/luxury-bathroom-hero.jpg)</h3>
+            <amp-img 
+                src="/images/bathrooms/luxury-bathroom-hero.jpg"
+                width="400"
+                height="225"
+                layout="responsive"
+                alt="Test 2 - Absolute path">
+            </amp-img>
+            <p>If image shows above, absolute path works!</p>
+        </div>
+        
+        <!-- Test 3: Placeholder to confirm AMP-img works -->
+        <div style="margin-bottom: 2rem; border: 2px solid green; padding: 1rem;">
+            <h3>Test 3: Placeholder Image (Should Always Work)</h3>
+            <amp-img 
+                src="https://via.placeholder.com/400x225/0066cc/ffffff?text=AMP+Test"
+                width="400"
+                height="225"
+                layout="responsive"
+                alt="Test 3 - Placeholder">
+            </amp-img>
+            <p>If this shows but others don't, it's a path issue!</p>
+        </div>
+        
+        <!-- Test 4: Regular img tag (non-AMP) -->
+        <div style="margin-bottom: 2rem; border: 2px solid orange; padding: 1rem;">
+            <h3>Test 4: Regular IMG Tag (Non-AMP)</h3>
+            <img src="images/bathrooms/luxury-bathroom-hero.jpg" 
+                 style="max-width: 100%; height: auto;" 
+                 alt="Test 4 - Regular img">
+            <p>If this shows but AMP version doesn't, it's an AMP issue!</p>
+        </div>
+        
+        <!-- Debugging info -->
+        <div style
+    </div>
+</section>
+<!-- END IMAGE PATH TEST SECTION -->
+
+
+
+
+            
         <!-- Trust Badges Section -->
         <section class="trust-badges">
             <div class="container">
