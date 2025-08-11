@@ -645,7 +645,82 @@
         font-size: 1.5rem;
     }
 }
+/* Mobile Hero Image Implementation */
+/* Add these styles to your existing <style amp-custom> section */
 
+.mobile-hero-image {
+    display: none; /* Hidden by default on desktop */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    /* Hide the background image container on mobile */
+    .hero-image-container {
+        display: none !important;
+    }
+    
+    /* Remove the overlay on mobile since no background */
+    .hero-overlay {
+        display: none !important;
+    }
+    
+    /* Give hero a nice background color on mobile */
+    .hero {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        min-height: auto;
+        padding-top: 2rem;
+    }
+    
+    /* Show and style the mobile inline image */
+    .mobile-hero-image {
+        display: block !important;
+        margin: 1.5rem -1rem; /* Negative margin to make it fuller width */
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    
+    .mobile-hero-image amp-img {
+        border-radius: 12px;
+    }
+    
+    .mobile-hero-image amp-img img {
+        border-radius: 12px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    /* Adjust spacing around the image */
+    .hero-content h1 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-subtitle {
+        margin-top: 1.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        border-radius: 8px;
+    }
+}
+
+/* Keep desktop unchanged */
+@media (min-width: 769px) {
+    .mobile-hero-image {
+        display: none !important;
+    }
+    
+    .hero-image-container {
+        display: block !important;
+    }
+}
+
+/* Extra small devices adjustment */
+@media (max-width: 480px) {
+    .mobile-hero-image {
+        margin: 1rem -1rem; /* Slightly less margin on very small screens */
+    }
+}
 /* Also try adding this to force AMP to load the image */
 @media (max-width: 768px) {
     amp-img[layout="fill"] {
@@ -2412,7 +2487,7 @@
         </nav>
     </amp-sidebar>
 
-    <!-- Hero Section -->
+   <!-- Hero Section -->
 <main id="main">
     <section class="hero">
          <div class="hero-image-container">
@@ -2430,6 +2505,18 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1>Bathroom Remodeling Near Me - One Day Installation | Save $2,025</h1>
+                
+                <!-- Mobile-only inline image -->
+                <div class="mobile-hero-image">
+                    <amp-img 
+                        src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=800&q=80"
+                        width="800"
+                        height="450"
+                        layout="responsive"
+                        alt="Luxury bathroom remodel showcase">
+                    </amp-img>
+                </div>
+                
                 <p class="hero-subtitle">Experience the perfect blend of elegance and functionality with our premium bathroom remodeling services. Award-winning designs, expert craftsmanship, and a lifetime warranty on every installation.</p>
                 
                 <div class="hero-features">
