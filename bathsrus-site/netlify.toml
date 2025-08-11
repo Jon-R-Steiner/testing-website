@@ -1,0 +1,33 @@
+# Netlify Configuration for Baths R Us Staging Site
+
+# Build settings
+[build]
+  # No build command needed for static HTML site
+  command = ""
+  
+  # Serve files from the root directory
+  publish = "."
+
+# Headers for better performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET"
+    Cache-Control = "public, max-age=3600"
+
+# Function configuration
+[functions]
+  # Functions are in the netlify/functions directory
+  directory = "netlify/functions"
+
+# Redirect /api/promotions to the function
+[[redirects]]
+  from = "/api/promotions"
+  to = "/.netlify/functions/promotion-scheduler"
+  status = 200
