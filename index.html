@@ -1711,7 +1711,7 @@
             }
         }
         
-          /* Improved Contact Section */
+        /* Improved Contact Section */
         .contact {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
@@ -2090,15 +2090,14 @@
             font-size: 1.2rem;
         }
 
-        .contact-form input,
-        .contact-form select {
+        .contact-form input {
             width: 100%;
             padding: 1rem;
             border: 2px solid #e0e0e0;
             border-radius: 10px;
             font-size: 16px;
             font-family: inherit;
-            background: #f8f9fa;
+            background-color: #f8f9fa;
             transition: all 0.3s ease;
             color: var(--dark);
             -webkit-appearance: none;
@@ -2108,28 +2107,70 @@
             z-index: 20; /* FIXED: Ensures inputs are above everything */
         }
 
-        /* Fix select dropdown arrow */
+        /* FIXED: Separated and improved select styling */
         .contact-form select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            background-color: #f8f9fa; /* FIXED: Using background-color */
+            transition: all 0.3s ease;
+            color: var(--dark);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: relative;
+            z-index: 20;
+            cursor: pointer;
+            /* Custom arrow */
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right 1rem center;
             background-size: 1.5em;
             padding-right: 3rem;
-            cursor: pointer;
         }
 
-        .contact-form input:focus,
-        .contact-form select:focus {
+        /* FIXED: Style option elements properly */
+        .contact-form select option {
+            background-color: white;
+            color: var(--dark);
+            padding: 0.5rem;
+            font-size: 16px;
+        }
+
+        /* FIXED: Style disabled/placeholder option */
+        .contact-form select option[disabled] {
+            color: #999999;
+            background-color: #f8f9fa;
+        }
+
+        /* FIXED: Remove any pseudo-elements causing checkmarks */
+        .contact-form select::before,
+        .contact-form select::after {
+            display: none !important;
+            content: none !important;
+        }
+
+        .contact-form input:focus {
             outline: none;
             border-color: var(--primary);
-            background: white;
+            background-color: white;
             box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
         }
 
-        /* Fix select focus state to keep arrow */
+        /* FIXED: Separate select focus state */
         .contact-form select:focus {
-            background-color: white;
+            outline: none;
+            border-color: var(--primary);
+            background-color: white; /* FIXED: Using background-color */
+            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+            /* Keep arrow on focus */
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.5em;
         }
 
         .submit-btn {
