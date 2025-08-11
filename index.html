@@ -645,8 +645,8 @@
         font-size: 1.5rem;
     }
 }
-/* Mobile Hero Image Implementation */
-/* Add these styles to your existing <style amp-custom> section */
+/* Update your existing mobile hero image CSS with this */
+/* Add to your <style amp-custom> section */
 
 .mobile-hero-image {
     display: none; /* Hidden by default on desktop */
@@ -671,24 +671,18 @@
         padding-top: 2rem;
     }
     
-    /* Show and style the mobile inline image */
+    /* Show and style the mobile inline image with proper height for background-image */
     .mobile-hero-image {
         display: block !important;
+        width: calc(100% + 2rem); /* Full width with negative margin compensation */
+        height: 250px; /* Fixed height for background image */
         margin: 1.5rem -1rem; /* Negative margin to make it fuller width */
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    }
-    
-    .mobile-hero-image amp-img {
-        border-radius: 12px;
-    }
-    
-    .mobile-hero-image amp-img img {
-        border-radius: 12px;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
     }
     
     /* Adjust spacing around the image */
@@ -718,17 +712,8 @@
 /* Extra small devices adjustment */
 @media (max-width: 480px) {
     .mobile-hero-image {
-        margin: 1rem -1rem; /* Slightly less margin on very small screens */
-    }
-}
-/* Also try adding this to force AMP to load the image */
-@media (max-width: 768px) {
-    amp-img[layout="fill"] {
-        position: absolute !important;
-        top: 0 !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
+        height: 200px; /* Slightly shorter on very small screens */
+        margin: 1rem -1rem;
     }
 }
         /* Services Section */
@@ -2487,16 +2472,17 @@
         </nav>
     </amp-sidebar>
 
-   <!-- Hero Section -->
+  <!-- Hero Section with CSS Background Fix -->
 <main id="main">
     <section class="hero">
-         <div class="hero-image-container">
-            <!-- Updated to use local image -->
+        <!-- Desktop background image using CSS -->
+        <div class="hero-image-container" style="background-image: url('images/bathrooms/luxury-bathroom-hero.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <!-- Keep amp-img with nodisplay for AMP compliance -->
             <amp-img 
-                src="/images/bathrooms/luxury-bathroom-hero.jpg"
+                src="images/bathrooms/luxury-bathroom-hero.jpg"
                 width="1920"
                 height="1080"
-                layout="responsive"
+                layout="nodisplay"
                 alt="Luxury bathroom remodel showcase"
                 class="hero-background-image">
             </amp-img>
@@ -2506,13 +2492,14 @@
             <div class="hero-content">
                 <h1>Bathroom Remodeling Near Me - One Day Installation | Save $2,025</h1>
                 
-                <!-- Mobile-only inline image -->
-                <div class="mobile-hero-image">
+                <!-- Mobile-only inline image using CSS background -->
+                <div class="mobile-hero-image" style="background-image: url('images/bathrooms/luxury-bathroom-hero.jpg'); background-size: cover; background-position: center;">
+                    <!-- Keep amp-img with nodisplay for AMP compliance -->
                     <amp-img 
-                        src="/images/bathrooms/luxury-bathroom-hero.jpg"
+                        src="images/bathrooms/luxury-bathroom-hero.jpg"
                         width="800"
                         height="450"
-                        layout="responsive"
+                        layout="nodisplay"
                         alt="Luxury bathroom remodel showcase">
                     </amp-img>
                 </div>
@@ -2574,7 +2561,6 @@
         </div>
     </section>
 </main>
-
 
 
 
