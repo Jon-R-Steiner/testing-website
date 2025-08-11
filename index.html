@@ -783,7 +783,121 @@
 .cta-instant-quote:hover {
     transform: translateX(5px);
 }
+/* Professional Stats Section */
+.stats-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8ecef 100%);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
 
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 2.5rem 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 102, 204, 0.15);
+    border-color: var(--primary);
+}
+
+.stat-card.featured-stat {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    transform: scale(1.05);
+}
+
+.stat-card.featured-stat .stat-value,
+.stat-card.featured-stat .stat-label {
+    color: white;
+}
+
+.stat-card.featured-stat:hover {
+    transform: scale(1.08) translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: var(--gray-medium);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .stat-card.featured-stat {
+        transform: none;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+    
+    .stat-icon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
 /* Improved Service Cards */
 .service-card {
     background: white;
@@ -1756,34 +1870,38 @@
         </section>
 
         <!-- Location-based content for SEO -->
-        <section class="locations" style="background: #f5f5f5; padding: 3rem 0;">
-            <div class="container">
-                <h2>Professional Bathroom Remodeling in Pennsylvania</h2>
-                <p>Serving Mechanicsburg, Harrisburg, Carlisle, York, Lancaster, and surrounding areas. 
-                As Central Pennsylvania's premier bathroom remodeling company, we've transformed over 
-                27,000 bathrooms with our signature one-day installation process. Licensed (PA HIC #PA012954), 
-                insured, and backed by lifetime warranties.</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
-                    <div style="text-align: center;">
-                        <strong style="font-size: 2rem; color: #0066cc;">$99</strong>
-                        <p>Starting Monthly Payment</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <strong style="font-size: 2rem; color: #0066cc;">1 Day</strong>
-                        <p>Average Installation Time</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <strong style="font-size: 2rem; color: #0066cc;">0%</strong>
-                        <p>Interest Financing Available</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <strong style="font-size: 2rem; color: #0066cc;">A+</strong>
-                        <p>BBB Accredited Rating</p>
-                    </div>
-                </div>
+        <section class="stats-section" id="pennsylvania-stats">
+    <div class="container">
+        <h2 class="section-title">Professional Bathroom Remodeling in Pennsylvania</h2>
+        <p class="section-subtitle">Serving Mechanicsburg, Harrisburg, Carlisle, York, Lancaster, and surrounding areas. 
+        As Central Pennsylvania's premier bathroom remodeling company, we've transformed over 
+        27,000 bathrooms with our signature one-day installation process. Licensed (PA HIC #PA012954), 
+        insured, and backed by lifetime warranties.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-value">$99</div>
+                <div class="stat-label">Starting Monthly Payment</div>
             </div>
-        </section>
+            <div class="stat-card featured-stat">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-value">1 Day</div>
+                <div class="stat-label">Average Installation Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💳</div>
+                <div class="stat-value">0%</div>
+                <div class="stat-label">Interest Financing Available</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-value">A+</div>
+                <div class="stat-label">BBB Accredited Rating</div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Services Section - Improved UX -->
 <section class="services" id="services">
